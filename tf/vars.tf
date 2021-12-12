@@ -1,6 +1,10 @@
 variable "aws_access_key" {
-  description = "aws"
+  type        = string
+  default     = "aws-access-key"
+  description = "AWS IAM Access Key"
 }
 variable "aws_secret_key" {
-  description = "aws"
+  type        = string
+  default     = "aws-secret-key"
+  description = "AWS IAM Secret Key"
 }
