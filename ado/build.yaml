@@ -9,14 +9,14 @@ jobs:
     displayName: install terraform
     inputs:
       terraformVersion: 1.1.0
-  # - script: |
-  #     cd tf
-  #     terraform init
-  #     terraform plan -var 'aws_access_key=$(TF-SC-KEY)' -var 'aws_secret_key=$(TF-SC-SECRET)' -input=false
-  #     terraform apply -auto-approve -input=false
-  #   displayName: TF Init Plan Apply
   - script: |
       cd tf
-      echo $(TF-SC-KEY)
-      echo $(TF-SC-SECRET)
+      terraform init
+      terraform plan -var aws_access_key=$(TF-SC-KEY) -var aws_secret_key=$(TF-SC-SECRET) -input=false
+      terraform apply -auto-approve -input=false
     displayName: TF Init Plan Apply
+  # - script: |
+  #     cd tf
+  #     echo $(TF-SC-KEY)
+  #     echo $(TF-SC-SECRET)
+  #   displayName: TF Init Plan Apply
