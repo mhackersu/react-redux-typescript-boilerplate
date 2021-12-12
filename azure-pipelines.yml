@@ -6,9 +6,9 @@ pool:
 
 steps:
 - task: TerraformInstaller
-    displayName: install terraform
-    inputs:
-        terraformVersion: 1.1.0
+  displayName: install terraform
+  inputs:
+    terraformVersion: 1.1.0
 
 - script: |
     terraform init
