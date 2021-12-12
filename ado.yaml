@@ -1,0 +1,8 @@
+trigger:
+- master
+
+jobs:
+- template: ado/build.yaml
+  parameters:
+    name: Linux
+    vmImage: 'ubuntu-latest'
