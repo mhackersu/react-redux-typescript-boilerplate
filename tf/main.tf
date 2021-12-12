@@ -5,6 +5,11 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "s3" {
+    bucket = "bananaforscale-aws-tf-state"
+    key    = "react-redux-typescript-boilerplate"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {

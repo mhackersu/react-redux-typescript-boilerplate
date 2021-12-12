@@ -11,8 +11,8 @@ jobs:
       terraformVersion: 1.1.0
   - script: |
       cd tf
-      terraform init
-      terraform plan -var aws_access_key=$(TF-SC-KEY) -var aws_secret_key=$(TF-SC-SECRET) -input=false
+      terraform init -backend-config="storage_account_name=$(TF-STATE-STORE)" -backend-config="access_key=$(TF-SC-SECRET)"
+      terraform plan -input=false -out=plan -var aws_access_key="$(TF-SC-KEY)" -var aws_secret_key="$(TF-SC-SECRET)"
       terraform apply -auto-approve -input=false
     displayName: TF Init Plan Apply
   # - script: |
