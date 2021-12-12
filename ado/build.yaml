@@ -10,6 +10,7 @@ jobs:
     inputs:
       terraformVersion: 1.1.0
   - script: |
+      cd tf
       terraform init
       terraform plan -var 'aws_access_key=${parameters.AWS_ACCESS_KEY}' -var 'aws_access_secret=${parameters.AWS_ACCESS_SECRET}' -input=false
       terraform apply -auto-approve -input=false
