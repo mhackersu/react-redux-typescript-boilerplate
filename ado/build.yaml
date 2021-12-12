@@ -3,7 +3,7 @@
 jobs:
 - job: build
   pool:
-    vmImage: ${parameters.vmImage}
+    vmImage: 'ubuntu-latest'
   steps:
   - script: npm run build
   - task: TerraformInstaller@0
