@@ -12,6 +12,6 @@ jobs:
   - script: |
       cd tf
       terraform init
-      terraform plan -var 'aws_access_key=$(AWS_ACCESS_KEY)' -var 'aws_access_secret=$(AWS_ACCESS_SECRET)' -input=false
+      terraform plan -var 'aws_access_key=$(TF-SC-KEY)' -var 'aws_access_secret=$(TF-SC-SECRET)' -input=false
       terraform apply -auto-approve -input=false
     displayName: TF Init Plan Apply
